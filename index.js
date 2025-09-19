@@ -6,11 +6,12 @@ const statuss = document.getElementById("status");
 button.addEventListener("click", postClick);
 
 async function postClick() {
+  const url = "https://jsonplaceholder.typicode.com/posts/5";
+
   statuss.innerHTML = "Loading...";
   const formData = new FormData(forma);
   const vertiba = formData.get("asd");
   console.log(vertiba);
-  const url = "https://jsonplaceholder.typicode.com/posts/5";
 
   const response = await fetch(url);
   const data = await response.json();
@@ -21,14 +22,17 @@ async function postClick() {
   const l2 = document.createElement("li");
   const l3 = document.createElement("li");
   const l4 = document.createElement("li");
+
   lists.appendChild(l1);
   lists.appendChild(l2);
   lists.appendChild(l3);
   lists.appendChild(l4);
+
   const user_id = document.createTextNode(data.userId);
   const idd = document.createTextNode(data.id);
   const titlee = document.createTextNode(data.title);
   const boddy = document.createTextNode(data.body);
+
   l1.appendChild(user_id);
   l2.appendChild(idd);
   l3.appendChild(titlee);
