@@ -5,8 +5,9 @@ const statuss = document.getElementById("status");
 
 button.addEventListener("click", postClick);
 
-async function postClick() {
-  const url = "https://jsonplaceholder.typicode.com/posts/5";
+async function postClick(event) {
+  event.preventDefault();
+  const url = "https://jsonplaceholder.typicode.com/posts/`{vertiba}`";
 
   statuss.innerHTML = "Loading...";
   const formData = new FormData(forma);
