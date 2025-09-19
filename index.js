@@ -7,12 +7,13 @@ button.addEventListener("click", postClick);
 
 async function postClick(event) {
   event.preventDefault();
-  const url = "https://jsonplaceholder.typicode.com/posts/`{vertiba}`";
 
   statuss.innerHTML = "Loading...";
   const formData = new FormData(forma);
   const vertiba = formData.get("asd");
   console.log(vertiba);
+
+  const url = `https://jsonplaceholder.typicode.com/posts/${vertiba}`;
 
   const response = await fetch(url);
   const data = await response.json();
